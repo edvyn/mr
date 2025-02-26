@@ -242,9 +242,20 @@ body {
     color: var(--light-color);
 }
 .item {
-    height: 220px;
     background-color: #502d55;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.publico .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    height: 100%;
 }
 
 .item:hover {
@@ -253,12 +264,6 @@ body {
     background-color: #70417e; /* Tom mais claro para efeito de destaque */
 }
 
-@media screen and (max-width: 800px){
-    .item{
-        height: fit-content;
-    }
-
-}
 
 .faq-section {
     padding: 60px 0;
