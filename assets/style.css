@@ -167,6 +167,9 @@ body {
     text-align: justify;
 }
 
+.mentoria button{
+    margin-bottom: 100px;
+}
 
 
 .mentoria-right .box {
@@ -296,11 +299,23 @@ body {
     background-image: url(bg-hero.png);
     background-size: 100% 100%;
     margin-top: 0; /* Remover margens superiores */
-    padding-top: 0; /* Remover padding superior */
     color: var(--light-color);
+    padding-top: 40px;
 }
+
+.curso .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .curso-item {
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.curso-item {
+    min-height: fit-content;
     background-color: var(--primary-color);
     font-size: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -332,7 +347,7 @@ body {
     }
     .curso{
         height: fit-content;
-        padding-top: 40px;
+
     }
     .curso button{
         margin-bottom: 90px;
@@ -363,6 +378,8 @@ body {
     background-size: 100% 100%;
     color: white;
     padding-bottom: 50px;
+    min-height: fit-content;
+    padding-top: 100px;
 }
 .shop span{
     color: var(--light-color);
