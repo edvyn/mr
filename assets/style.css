@@ -250,6 +250,12 @@ body {
     background-color: #70417e; /* Tom mais claro para efeito de destaque */
 }
 
+@media screen and (max-width: 800px){
+    .item{
+        height: fit-content;
+    }
+
+}
 
 .faq-section {
     padding: 60px 0;
