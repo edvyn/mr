@@ -47,7 +47,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(bg-hero.png);
+    background-image: url(bg-hero.webp);
     background-size: 100% 100%;
     max-width: 100%;
 }
@@ -162,7 +162,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(bg-mentoria.png);
+    background-image: url(bg-mentoria.webp);
     background-size: 100% 100%;
     margin-top: 0; /* Remover margens superiores */
     padding-top: 0; /* Remover padding superior */
@@ -336,7 +336,7 @@ body {
     align-items: center;
     padding-top: 100px;
     width: 100%;
-    background-image: url(bg-course.png);
+    background-image: url(bg-course.webp);
     background-size: 100% 100%;
 }
 
@@ -405,7 +405,7 @@ body {
 }
 
 
-.course-container .tab label h3 {
+.tab-title{
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--light-color);
@@ -416,7 +416,7 @@ body {
 }
 
 
-.course-container .tab label h3::before {
+.tab-title::before {
     content: attr(data-number) '';
     background-color: greenyellow; 
     color: #1c1c1e; 
@@ -488,7 +488,7 @@ body {
 .faq-section {
     padding: 60px 0;
     min-height: 500px;
-    background-image: url(bg-faq.png);
+    background-image: url(bg-faq.webp);
     background-size: 100% 100%;
 }
 
@@ -599,7 +599,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-image: url(bg-shop.png);
+    background-image: url(bg-shop.webp);
     background-size: 100% 100%;
     color: white;
     padding-bottom: 50px;
