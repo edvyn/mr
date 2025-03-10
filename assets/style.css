@@ -32,7 +32,7 @@ body {
     background-color: var(--dark-color); 
 }
 .hidden-content {
-    opacity: 0;
+    opacity: 0.001;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -70,14 +70,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; 
+    opacity: 0.001; 
     animation: slideInText 0.5s forwards 0.5s; 
     
 }
 
 @keyframes slideInText {
     0% {
-        opacity: 0;
+        opacity: 0.001;
         transform: translateX(-70px); 
     }
     100% {
@@ -106,7 +106,7 @@ body {
 }
 
 .hero-right{
-    opacity: 0;
+    opacity: 0.001;
     animation: slideInText 0.5s forwards 0.5s; 
 }
 .hero-right .box {
