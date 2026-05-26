@@ -215,7 +215,12 @@
     cursor: pointer;
     border: none;
   }
- 
+
+ .btn-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+  }
+
   .btn-primary::before {
     content: '';
     position: absolute;
@@ -493,9 +498,9 @@
  
   .problema-cta {
     text-align: center;
-    margin-top: 60px;
-    padding-top: 60px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
  
   .problema-cta p {
@@ -518,6 +523,7 @@
   /* ── SOLUÇÃO ── */
   .solucao-section {
     background: var(--marfim);
+    font-variant-numeric: lining-nums;
   }
  
   /* ── CONTEÚDO / CAPÍTULOS ── */
@@ -538,6 +544,7 @@
     position: relative;
     transition: all 0.3s;
     border-left: 3px solid transparent;
+    
   }
  
   .capitulo-card:hover {
@@ -554,6 +561,7 @@
     line-height: 1;
     margin-bottom: 16px;
     display: block;
+    
   }
  
   .cap-label {
@@ -572,6 +580,8 @@
     color: var(--verde-oliva);
     margin-bottom: 14px;
     line-height: 1.2;
+    
+
   }
  
   .cap-desc {
@@ -824,6 +834,42 @@
     font-weight: 700;
     margin-bottom: 2px;
   }
+  /* ═══ PARA QUEM É ═══ */
+  .s-paraquem { background: var(--marfim); }
+  
+  .paraquem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .paraquem-col { padding: 40px; }
+  .paraquem-col.sim { background: var(--verde-bruma); border: 1px solid var(--verde-salvia); }
+  .paraquem-col.nao { background: #faf9f7; border: 1px solid var(--cinza); }
+  .paraquem-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .paraquem-col.sim .paraquem-label { color: var(--verde-oliva); }
+  .paraquem-col.nao .paraquem-label { color: #bbb; }
+  .paraquem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .paraquem-item span {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .paraquem-col.sim .paraquem-item span { color: var(--verde-oliva); }
+  .paraquem-col.nao .paraquem-item span { color: #aaa; }
+  .ic-sim { color: var(--verde-oliva); font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+  .ic-nao { color: #ccc; font-size: 17px; flex-shrink: 0; margin-top: 1px; }
  
   /* ── ANTES/DEPOIS ── */
   .transformacao-section {
@@ -1274,6 +1320,7 @@
       width: 100%;
       height: 60px;
     }
+    .paraquem-grid { grid-template-columns: 1fr; }
  
     section { padding: 70px 24px; }
     header { padding: 16px 24px; }
@@ -1286,3 +1333,5 @@
     .sobre-facts { grid-template-columns: 1fr; }
     .footer-links { flex-direction: column; gap: 16px; }
   }
+
+  
