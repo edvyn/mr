@@ -861,7 +861,7 @@
   }
   .paraquem-col { padding: 40px; }
   .paraquem-col.sim { background: var(--verde-bruma); border: 1px solid var(--verde-salvia); }
-  .paraquem-col.nao { background: #faeeee; border: 2px solid var(--cinza); }
+  .paraquem-col.nao { background: #e0e0e0; border: 2px solid var(--cinza); }
   .paraquem-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
