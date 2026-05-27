@@ -63,10 +63,18 @@
   .logo-text .tagline {
     font-family: 'Montserrat', sans-serif;
     font-size: 9px;
+    font-weight: 800;
     letter-spacing: 4px;
-    color: var(--dourado);
+    color: var(--verde-oliva);
     text-transform: uppercase;
     margin-top: 2px;
+  }
+
+  .logo img{
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto 8px;
   }
  
   /* ── HERO ── */
@@ -77,6 +85,7 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    padding-bottom: 12px;
   }
  
   .hero::before {
@@ -124,16 +133,17 @@
     padding: 80px 60px 80px 80px;
     position: relative;
     z-index: 1;
-    max-height: 750px;
+    max-height: 760px;
   }
  
   .hero-eyebrow {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 4px;
     color: var(--dourado);
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-weight: 800;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -149,11 +159,10 @@
  
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 5vw, 62px);
-    font-weight: 600;
-    line-height: 1.1;
+    font-size: clamp(60px, 6vw, 67px);
+    font-weight: 700;
+    line-height: 0.8;
     color: var(--verde-oliva);
-    margin-bottom: 12px;
   }
  
   .hero-title em {
@@ -163,10 +172,11 @@
  
   .hero-subtitle {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #666;
-    line-height: 1.7;
-    margin-bottom: 40px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 10px;
     max-width: 420px;
   }
  
@@ -177,7 +187,8 @@
   .hero-badges {
     display: flex;
     gap: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 20px;
+    margin-top: 12px;
     flex-wrap: wrap;
   }
  
@@ -262,7 +273,8 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     letter-spacing: 1px;
-    color: #999;
+    color: var(--verde-salvia);
+    font-weight: 600;
     text-transform: uppercase;
   }
  
@@ -276,7 +288,7 @@
     position: relative;
     z-index: 10;
     overflow: visible;
-    max-height: 750px;
+    max-height: 720px;
   }
  
   .hero-photo-wrap {
@@ -370,7 +382,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
-    opacity: 0.25;
+    opacity: 0.15;
   }
  
   .hero-deco-dots span {
@@ -401,8 +413,9 @@
  
   .section-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 4px;
+    font-weight: 800;
     text-transform: uppercase;
     color: var(--dourado);
     text-align: center;
@@ -411,7 +424,7 @@
  
 .section-title {
     font-family: 'Cormorant Garamond', sans-serif;
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(30px, 4vw, 48px);
     font-weight: 600;
     font-variant-numeric: lining-nums; /* Resolve o alinhamento do número 5 */
     color: var(--verde-oliva);
@@ -557,7 +570,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 64px;
     font-weight: 300;
-    color: var(--verde-bruma);
+    color: var(--verde-oliva);
     line-height: 1;
     margin-bottom: 16px;
     display: block;
@@ -567,6 +580,7 @@
   .cap-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 9px;
+    font-weight: 600;
     letter-spacing: 3px;
     color: var(--dourado);
     text-transform: uppercase;
@@ -637,6 +651,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 9px;
     letter-spacing: 3px;
+    font-weight: 800;
     text-transform: uppercase;
     color: var(--dourado);
     margin-bottom: 12px;
@@ -644,10 +659,10 @@
  
   .bonus-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 25px;
     color: var(--marfim);
     margin-bottom: 12px;
-    font-weight: 500;
+    font-weight: 800;
   }
  
   .bonus-desc {
@@ -703,6 +718,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     letter-spacing: 3px;
+    font-weight: 600;
     color: var(--verde-salvia);
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -716,15 +732,15 @@
  
   .planilha-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 20px;;
     color: var(--verde-oliva);
     margin-bottom: 12px;
-    font-weight: 600;
+    font-weight: 800;
   }
  
   .planilha-desc {
     font-family: 'Lato', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #888;
     line-height: 1.7;
   }
@@ -845,11 +861,12 @@
   }
   .paraquem-col { padding: 40px; }
   .paraquem-col.sim { background: var(--verde-bruma); border: 1px solid var(--verde-salvia); }
-  .paraquem-col.nao { background: #faf9f7; border: 1px solid var(--cinza); }
+  .paraquem-col.nao { background: #faeeee; border: 2px solid var(--cinza); }
   .paraquem-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     letter-spacing: 3px;
+    font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 28px;
   }
@@ -902,6 +919,7 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 32px;
+    font-weight: 800;
   }
  
   .antes-col .col-label { color: #bbb; }
