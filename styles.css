@@ -3,7 +3,7 @@
     --bege: #E9E1D6;
     --verde-salvia: #A7B29A;
     --verde-oliva: #55624A;
-    --dourado: #C9A86A;
+    --dourado: #b38e4c;
     --carvao: #2D2D2D;
     --cinza: #E6E6E6;
     --verde-bruma: #DCE5DE;
@@ -273,14 +273,14 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     letter-spacing: 1px;
-    color: var(--verde-salvia);
-    font-weight: 600;
+    color: var(--verde-oliva);
+    font-weight: 800;
     text-transform: uppercase;
   }
  
   .hero-trust span::before {
     content: '✓ ';
-    color: var(--verde-salvia);
+    color: var(--verde-oliva);
   }
  
   /* ── HERO RIGHT (foto) ── */
