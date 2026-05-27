@@ -27,7 +27,7 @@
     text-align: center;
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 8px;
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--marfim);
@@ -38,7 +38,7 @@
   header {
     background: var(--marfim);
     border-bottom: 1px solid var(--bege);
-    padding: 18px 40px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +53,7 @@
  
   .logo-text .nome {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: 3px;
     color: var(--verde-oliva);
@@ -74,7 +74,7 @@
     height: 40px;
     width: auto;
     display: block;
-    margin: 0 auto 8px;
+    margin: 0 auto;
   }
  
   /* ── HERO ── */
@@ -133,7 +133,7 @@
     padding: 80px 60px 80px 80px;
     position: relative;
     z-index: 1;
-    max-height: 760px;
+    max-height: 740px;
   }
  
   .hero-eyebrow {
@@ -159,8 +159,8 @@
  
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(60px, 6vw, 67px);
-    font-weight: 700;
+    font-size: clamp(55px, 6vw, 58px);
+    font-weight: 800;
     line-height: 0.8;
     color: var(--verde-oliva);
   }
