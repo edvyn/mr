@@ -8,6 +8,7 @@
     --cinza: #E6E6E6;
     --verde-bruma: #DCE5DE;
     --branco: #ffffff;
+    --color-bg: #303030; /* Preto meio cinza profundo */
   }
  
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -211,7 +212,7 @@
  
   .btn-primary {
     display: inline-block;
-    background: var(--verde-oliva);
+    background: rgb(32, 146, 42);
     color: var(--marfim);
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -225,6 +226,7 @@
     overflow: hidden;
     cursor: pointer;
     border: none;
+    box-shadow: 0 10px 30px rgba(32, 146, 42, 0.35);
   }
 
  .btn-wrapper {
@@ -236,7 +238,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--dourado);
+    background: rgb(19, 82, 24);
     transform: translateX(-100%);
     transition: transform 0.4s ease;
   }
@@ -276,6 +278,7 @@
     color: var(--verde-oliva);
     font-weight: 800;
     text-transform: uppercase;
+    text-align: center;
   }
  
   .hero-trust span::before {
@@ -339,67 +342,157 @@
     object-position: center top;
   }
  
-  /* Floating card on hero */
-  .hero-float-card {
-    position: absolute;
-    bottom: 60px;
-    left: -30px;
-    background: var(--branco);
-    padding: 20px 24px;
-    box-shadow: 0 20px 60px rgba(85, 98, 74, 0.15);
-    z-index: 120;
-    min-width: 220px;
+/* Card Flutuante com Design de Alta Costura / Premium */
+.hero-brand-badge {
+  position: absolute;
+  bottom: 60px;
+  left: -30px;
+  /* Fundo baseado no carvão/preto meio cinza com leve transparência */
+  background: rgba(45, 45, 45, 0.75); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Borda sutil em marfim ao invés de sombra pesada */
+  border: 1px solid rgba(247, 244, 239, 0.08);
+  padding: 28px 32px;
+  z-index: 120;
+  min-width: 260px;
+  border-radius: 2px;
+  
+  /* Efeito de iluminação linear discreta na lateral esquerda */
+  box-shadow: -5px 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Tag pequenina acima do nome */
+.hero-brand-badge__tag {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--dourado);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Nome da Doutora em Destaque */
+.hero-brand-badge__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--marfim);
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  font-style: italic;
+  border-bottom: 1px solid rgba(233, 225, 214, 0.1);
+  padding-bottom: 12px;
+}
+
+/* Container das linhas de benefício */
+.hero-brand-badge__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Linhas de conteúdo */
+.hero-brand-badge__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Marcador Quadrado e sutil (substituindo a bolinha) para um ar mais moderno */
+.hero-brand-badge__marker {
+  width: 4px;
+  height: 4px;
+  background: var(--verde-salvia);
+  transform: rotate(45deg); /* Transforma o ponto em um pequeno losango */
+  flex-shrink: 0;
+}
+
+/* Texto das conquistas */
+.hero-brand-badge__text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--bege);
+  letter-spacing: 0.05em;
+}
+
+
+/* --- Elementos Decorativos Repaginados --- */
+
+/* Matriz de Pontos (Grid de micro-pontos minimalistas) */
+.hero-deco-matrix {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 4px);
+  gap: 12px; /* Aumentei o espaçamento para parecer mais editorial */
+  opacity: 0.25;
+}
+
+.hero-deco-matrix span {
+  width: 2px; /* Pontos menores e mais elegantes */
+  height: 2px;
+  background: var(--verde-salvia);
+  border-radius: 50%;
+  display: block;
+}
+
+/* Divisor de Ouro Assimétrico */
+.hero-minimal-divider {
+  border: none;
+  width: 40px;
+  height: 1px;
+  /* Degradê sutil que desaparece, evitando linhas pesadas no meio da tela */
+  background: linear-gradient(90deg, var(--dourado), transparent);
+  margin: 24px auto 24px 0; /* Alinhado à esquerda para quebrar a simetria óbvia */
+}
+
+/* --- Responsividade para Dispositivos Móveis --- */
+@media (max-width: 768px) {
+  
+  .hero-brand-badge {
+    /* Traz o card para dentro da tela (alinhado com a margem padrão do mobile) */
+    left: 16px; 
+    bottom: 40px;
+    
+    /* Reduz o tamanho geral do card */
+    min-width: auto;
+    width: calc(100% - 32px); /* Ocupa a largura da tela descontando as margens */
+    max-width: 280px;         /* Garante que ele não fique gigante em telas médias */
+    padding: 18px 22px;       /* Menos espaço interno para economizar tela */
   }
- 
-  .hero-float-card .label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--dourado);
-    margin-bottom: 8px;
+
+  /* Deixa o nome da Doutora um pouco menor e mais compacto */
+  .hero-brand-badge__title {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
   }
- 
-  .hero-float-card .value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--verde-oliva);
-    line-height: 1;
+
+  /* Reduz sutilmente o texto dos benefícios */
+  .hero-brand-badge__text {
+    font-size: 0.75rem;
   }
- 
-  .hero-float-card .sublabel {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    color: #999;
-    margin-top: 4px;
+
+  /* Diminui o espaço entre as linhas no mobile */
+  .hero-brand-badge__body {
+    gap: 8px;
   }
- 
-  .hero-deco-dots {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+
+  /* Esconde ou diminui os pontos decorativos para não poluir o topo no mobile */
+  .hero-deco-matrix {
+    top: 20px;
+    left: 20px;
     gap: 8px;
     opacity: 0.15;
   }
- 
-  .hero-deco-dots span {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--verde-oliva);
-    display: block;
-  }
- 
-  /* Gold divider */
-  .divider-gold {
-    width: 60px;
-    height: 2px;
-    background: var(--dourado);
-    margin: 0 auto;
-  }
+}
  
   /* ── SECTION BASE ── */
   section {
@@ -447,6 +540,183 @@
     max-width: 560px;
     margin: 0 auto 60px;
   }
+
+/* Variáveis de Cor e Estilo para fácil customização */
+:root {
+  --color-bg: #0b0f19;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text-muted: #94a3b8;
+  --color-text-light: #f8fafc;
+  --color-primary: #10b981; /* Verde Dinheiro / Sucesso */
+  --color-primary-glow: rgba(16, 185, 129, 0.15);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Estrutura da Seção */
+.financial-diagnosis {
+  background-color: var(--carvao);
+  color: var(--marfim);
+  font-family: var(--font-serif);
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.financial-diagnosis__container {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Orbes Decorativos adaptados para tons oliva e bruma */
+.financial-diagnosis__blur-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.15; /* Sutil para manter o tom escuro elegante */
+  z-index: 1;
+}
+
+.financial-diagnosis__blur-orb--primary {
+  width: 350px;
+  height: 350px;
+  background: var(--verde-oliva);
+  top: -5%;
+  left: -10%;
+}
+
+.financial-diagnosis__blur-orb--secondary {
+  width: 450px;
+  height: 450px;
+  background: var(--verde-salvia);
+  bottom: -15%;
+  right: -10%;
+}
+
+/* Badge / Etiqueta "O Diagnóstico" */
+.financial-diagnosis__badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.financial-diagnosis__badge-text {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--dourado);
+}
+
+.financial-diagnosis__badge-line {
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+}
+
+/* Bloco da Pergunta (Gatilho) */
+.financial-diagnosis__lead {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--verde-salvia);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.financial-diagnosis__quote-box {
+  margin: 0 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.financial-diagnosis__quote-text {
+  font-size: 2.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bege);
+}
+
+.financial-diagnosis__quote-highlight {
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: var(--marfim);
+  line-height: 1.1;
+}
+
+/* Bloco de Cards (A Revelação) */
+.financial-diagnosis__revelation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+}
+
+/* Card Base Estilo Minimalista/Premium */
+.financial-diagnosis__card {
+  background: rgba(45, 45, 45, 0.4); /* Baseado no --carvao com transparência */
+  border: 1px solid rgba(233, 225, 214, 0.08); /* Borda sutil com tom --bege */
+  padding: 40px 32px;
+  border-radius: 4px; /* Bordas mais retas transmitem mais seriedade/luxo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.financial-diagnosis__card p {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--bege);
+}
+
+.financial-diagnosis__card strong {
+  color: var(--marfim);
+  font-weight: 700;
+}
+
+/* Modificador do Card de Destaque (Dourado/Oliva) */
+.financial-diagnosis__card--accent {
+  border-color: rgba(179, 142, 76, 0.3); /* Borda em --dourado sutil */
+  background: linear-gradient(135deg, rgba(85, 98, 74, 0.2), rgba(45, 45, 45, 0.6)); /* Mistura de --verde-oliva e --carvao */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(179, 142, 76, 0.05);
+}
+
+.financial-diagnosis__card--accent p {
+  color: var(--marfim);
+}
+
+.financial-diagnosis__card--accent strong {
+  color: var(--dourado);
+  font-weight: 700;
+}
+
+/* Responsividade para Dispositivos Móveis */
+@media (max-width: 768px) {
+  .financial-diagnosis { padding: 60px 20px; }
+  .financial-diagnosis__quote-text { font-size: 2rem; }
+  .financial-diagnosis__quote-highlight { font-size: 2.4rem; }
+  
+  .financial-diagnosis__revelation {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .financial-diagnosis__card { padding: 30px 24px; }
+}
+
+
  
   /* ── PROBLEMA ── */
   .problema-section {
@@ -477,35 +747,41 @@
   .problema-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2px;
+    gap: 10px;
     margin-top: 60px;
   }
  
   .problema-item {
-    background: rgba(255,255,255,0.03);
+    background: rgb(255, 255, 255);
     border: 1px solid rgba(255,255,255,0.07);
-    padding: 36px 30px;
-    transition: all 0.3s;
+    padding: 15px 30px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .problema-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.1); 
   }
  
   .problema-item::before {
     content: '❌';
     font-size: 20px;
     display: block;
-    margin-bottom: 16px;
-  }
- 
-  .problema-item:hover {
-    background: rgba(167, 178, 154, 0.08);
-    border-color: rgba(201, 168, 106, 0.3);
-    transform: translateY(-2px);
+    margin-bottom: 10px;
   }
  
   .problema-item p {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
-    color: rgba(247, 244, 239, 0.85);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85);
     line-height: 1.6;
   }
  
@@ -532,12 +808,31 @@
     margin-bottom: 36px;
     font-weight: 600;
   }
- 
+
+  .section-desc-prob{
+    color: white;
+    text-align: center;
+    font-family: cormorant garamond, serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-weight: 800;
+  }
+ .section-desc-prob span{
+    color: var(--dourado);
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
   /* ── SOLUÇÃO ── */
   .solucao-section {
     background: var(--marfim);
     font-variant-numeric: lining-nums;
   }
+  .solucao-section .section-desc{
+    font-size: 18px;
+  }
+
  
   /* ── CONTEÚDO / CAPÍTULOS ── */
   .conteudo-section {
@@ -619,7 +914,7 @@
   }
  
   .bonus-section .section-desc {
-    color: rgba(247, 244, 239, 0.6);
+    color: rgba(247, 244, 239, 0.911);
   }
  
   .bonus-grid {
@@ -649,11 +944,11 @@
  
   .bonus-tag {
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 3px;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--dourado);
+    color: #b98e3e;
     margin-bottom: 12px;
   }
  
@@ -667,8 +962,8 @@
  
   .bonus-desc {
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    color: rgba(247,244,239,0.65);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.842);
     line-height: 1.7;
   }
  
@@ -740,9 +1035,10 @@
  
   .planilha-desc {
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    color: #888;
+    font-size: 16px;
+    color: #505050;
     line-height: 1.7;
+    font-weight: 500;
   }
  
   /* ── SOBRE A DRA. ── */
@@ -860,18 +1156,17 @@
     margin-top: 60px;
   }
   .paraquem-col { padding: 40px; }
-  .paraquem-col.sim { background: var(--verde-bruma); border: 1px solid var(--verde-salvia); }
-  .paraquem-col.nao { background: #e0e0e0; border: 2px solid var(--cinza); }
+  .paraquem-col.sim { background: var(--verde-oliva); border: 1px solid var(--verde-oliva); }
+  .paraquem-col.nao { background: #ffffff; border: 2px solid var(--cinza); }
   .paraquem-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     font-weight: 800;
-    text-transform: uppercase;
     margin-bottom: 28px;
   }
-  .paraquem-col.sim .paraquem-label { color: var(--verde-oliva); }
-  .paraquem-col.nao .paraquem-label { color: #bbb; }
+  .paraquem-col.sim .paraquem-label { color: white ; }
+  .paraquem-col.nao .paraquem-label { color: var(--verde-oliva); }
   .paraquem-item {
     display: flex;
     align-items: flex-start;
@@ -880,11 +1175,11 @@
   }
   .paraquem-item span {
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 1.1rem;
     line-height: 1.5;
   }
-  .paraquem-col.sim .paraquem-item span { color: var(--verde-oliva); }
-  .paraquem-col.nao .paraquem-item span { color: #aaa; }
+  .paraquem-col.sim .paraquem-item span { color: white; }
+  .paraquem-col.nao .paraquem-item span { color: #858585; }
   .ic-sim { color: var(--verde-oliva); font-size: 17px; flex-shrink: 0; margin-top: 1px; }
   .ic-nao { color: #ccc; font-size: 17px; flex-shrink: 0; margin-top: 1px; }
  
@@ -917,13 +1212,12 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     letter-spacing: 3px;
-    text-transform: uppercase;
     margin-bottom: 32px;
-    font-weight: 800;
+    font-weight: 600;
   }
  
-  .antes-col .col-label { color: #bbb; }
-  .depois-col .col-label { color: var(--dourado); }
+  .antes-col .col-label { color: var(--verde-oliva); }
+  .depois-col .col-label { color: white; }
  
   .antes-item, .depois-item {
     display: flex;
@@ -934,11 +1228,11 @@
  
   .antes-item span, .depois-item span {
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 1.1rem;
     line-height: 1.5;
   }
  
-  .antes-item span { color: #888; }
+  .antes-item span { color: #888; font-size: 1.1rem; }
   .depois-item span { color: rgba(247, 244, 239, 0.9); }
  
   .icon-x { color: #ccc; font-size: 18px; flex-shrink: 0; }
@@ -1107,8 +1401,8 @@
  
   .btn-comprar {
     width: 100%;
-    background: var(--dourado);
-    color: var(--carvao);
+    background: rgb(32, 146, 42);
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -1125,9 +1419,9 @@
   }
  
   .btn-comprar:hover {
-    background: #b8953e;
+    background: rgb(32, 146, 42);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
+    box-shadow: 0 10px 30px rgb(32, 129, 23);
   }
  
   .trust-row {
